@@ -1,0 +1,24 @@
+Date: 10022020
+Reason:'NoneType' object has no attribute 'group'
+
+Date: 14042020
+Reason:A very specific bad thing happened. (NO LINK FOUND!!!!)
+
+Date: 13042020
+Reason:A very specific bad thing happened. (NO LINK FOUND!!!!)
+
+Date: 15042020
+Reason:A very specific bad thing happened. (DATE DOES NOT MATCH)
+
+Date: 11022020
+Reason:'NoneType' object has no attribute 'group'
+
+Date: 17042020
+Reason:A very specific bad thing happened. (DATE DOES NOT MATCH)
+
+Date: 19042020
+Reason:A very specific bad thing happened. (DATE DOES NOT MATCH)
+
+Date: 18042020
+Reason:A very specific bad thing happened. (DATE DOES NOT MATCH)
+
