@@ -4,7 +4,8 @@ import datetime as dt
 import pickle
 import os
 
-
+import torch as th
+import dgl
 
 
 from modules.gnn_model import *
@@ -131,4 +132,4 @@ plt.ylim((0.6,1))
 plt.show()
 
 
-sqrt(test_loss[499])
+#sqrt(test_loss[499])

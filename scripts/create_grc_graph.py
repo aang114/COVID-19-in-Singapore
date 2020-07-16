@@ -42,6 +42,7 @@ dfc = dfc.loc[sorted(G.nodes())]
 
 # normalize values to [0,1]
 dfc = dfc / dfc.values.max(axis=1, keepdims=True)
+dfc.fillna(0.0, inplace=True) # some GRCs have 0 cases
 
 
 # make C a directed graph
@@ -76,10 +77,16 @@ for date in pd.date_range(start_date, end_date):
     confirmed = np.reshape(dfc[lag_dates].values, (-1, n_lags, 1))
 
     #deaths = np.reshape(dfd[lag_dates].values, (-1, n_lags, 1))
-    #features = np.concatenate((confirmed, deaths), axis=2)
 
-    features = confirmed
-    targets = np.stack((dfc[date].values)).T
+    deaths = np.zeros(shape=(confirmed.shape[0], n_lags, 1))
+
+    features = np.concatenate((confirmed, deaths), axis=2)
+
+    #features = confirmed
+
+    #targets = np.stack((dfc[date].values)).T
+
+    targets = np.stack( (dfc[date].values, np.zeros(shape=confirmed.shape[0])) ).T
 
     # save feature and response arrays with original graph
     with open(f'../graph files/{str(date)[0:10]}.pkl', 'wb') as f:

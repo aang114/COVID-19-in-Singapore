@@ -1,6 +1,4 @@
-import dgl
 import dgl.function as fn
-import torch as th
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -47,10 +45,10 @@ class Net(nn.Module):
   def __init__(self):
     super(Net, self).__init__()
 
-    self.layer1 = GCNLSTM(1, 10)
+    self.layer1 = GCNLSTM(2, 10)
     self.dropout1 = nn.Dropout(0.3)
     self.layer2 = GCNLinear(100, 50)
-    self.layer3 = GCNLinear(50, 1)
+    self.layer3 = GCNLinear(50, 2)
 
   def forward(self, g, features):
     batch_size, seq_len, n_feats = features.size()
