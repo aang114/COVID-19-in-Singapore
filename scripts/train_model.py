@@ -7,8 +7,9 @@ import os
 import torch as th
 import dgl
 
-
 from modules.gnn_model import *
+
+from common.paths import File
 
 def load_data(file):
     with open(f'../graph files/{file}', 'rb') as f:
@@ -85,51 +86,56 @@ for epoch in range(n_epochs):
 
 
 
-#  Show Loss vs Epoch Plot
-
+# Show Loss vs Epoch Plot
 plt.plot(train_loss)
 plt.plot(test_loss)
 plt.title('Loss vs. Epochs')
 plt.ylim((0,0.6))
-plt.show()
 
+plt.savefig(File.loss_vs_epoch_png)
+#plt.show()
 
+# Save Model and Train and Test Files
 
+with open(File.trained_model, 'wb') as f:
+    pickle.dump(obj=net, file=f)
 
+with open(File.train_files, 'wb') as f:
+    pickle.dump(obj=train_files, file=f)
 
+with open(File.test_files, 'wb') as f:
+    pickle.dump(obj=test_files, file=f)
 
 
 
 # Forecast
 
 def one_day_forecast(g, features):
-  pred = net(g, features)
-  new_features = th.zeros(features.size())
-  new_features[:,0:9,:] = features[:,1:10,:]
-  new_features[:,9,:] = pred
-  return pred, new_features
+    pred = net(g, features)
+    new_features = th.zeros(features.size())
+    new_features[:, 0:9, :] = features[:, 1:10, :]
+    new_features[:, 9, :] = pred
+    return pred, new_features
 
 def several_day_forecast(g, features, n_days):
-  new_features = features
-  for i in range(n_days):
-    pred, new_features = one_day_forecast(g, new_features)
-  return pred, new_features
+    new_features = features
+    for i in range(n_days):
+        pred, new_features = one_day_forecast(g, new_features)
+    return pred, new_features
 
 
+#g, features, targets = load_data('2020-06-26.pkl')
+#pred, new_features = several_day_forecast(g, features, 7)
 
-g, features, targets = load_data('2020-06-26.pkl')
-pred, new_features = several_day_forecast(g, features, 7)
-
-g, true_features, targets = load_data('2020-07-03.pkl')
-
-
+#g, true_features, targets = load_data('2020-07-03.pkl')
 
 # look at illinois as example (14 is index of illinois)
-plt.plot(new_features[14,:,0].detach().numpy())
-plt.plot(true_features[14,:,0].detach().numpy())
-plt.title('Illinois Confirmed Cases')
-plt.ylim((0.6,1))
-plt.show()
+#plt.plot(new_features[14, :, 0].detach().numpy())
+#plt.plot(true_features[14, :, 0].detach().numpy())
+#plt.title('Illinois Confirmed Cases')
+#plt.ylim((0.6, 1))
+#plt.show()
+
+# sqrt(test_loss[499])
 
 
-#sqrt(test_loss[499])

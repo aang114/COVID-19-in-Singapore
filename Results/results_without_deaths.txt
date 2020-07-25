@@ -1,0 +1,20 @@
+Epoch: 0, Train Loss: 0.15915289616074274, Test Loss: 0.2484888769686222
+Epoch: 50, Train Loss: 0.13688164484618162, Test Loss: 0.24820029363036156
+Epoch: 100, Train Loss: 0.13665623928385753, Test Loss: 0.24814572371542454
+Epoch: 150, Train Loss: 0.1364133956807631, Test Loss: 0.24803895689547062
+Epoch: 200, Train Loss: 0.1362264021386013, Test Loss: 0.24798240512609482
+Epoch: 250, Train Loss: 0.1360972232564732, Test Loss: 0.24790367297828197
+Epoch: 300, Train Loss: 0.13618189432761735, Test Loss: 0.2478934284299612
+Epoch: 350, Train Loss: 0.13597107993404348, Test Loss: 0.24785862118005753
+Epoch: 400, Train Loss: 0.13588994644858218, Test Loss: 0.24788344837725163
+Epoch: 450, Train Loss: 0.13603698126799255, Test Loss: 0.24779858626425266
+Traceback (most recent call last):
+  File "/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py", line 1438, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+  File "/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "/Users/karandevsapra/Desktop/COVID-19 Repo/scripts/train_model.py", line 134, in <module>
+    sqrt(test_loss[499])
+NameError: name 'sqrt' is not defined
+
+Process finished with exit code 1

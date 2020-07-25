@@ -11,20 +11,17 @@ import datetime as dt
 
 import numpy as np
 
-# Get Number of cases Dataframe
+from common.paths import File
 
-path = '../csv files/INPUT_MATRIX.csv'
+# Get Number of cases DataFrame
 
-dfc = pd.read_csv(path, index_col=0)
+dfc = pd.read_csv(File.input_matrix, index_col=0)
 
 dfc.columns = pd.to_datetime(dfc.columns)
 
 # Create Graph
 
-path = '../grc files/grc neighbours (manually checked).json'
-
-grc_to_neighbours = GRCGraph.get_grc_to_neighbours(path)
-
+grc_to_neighbours = GRCGraph.get_grc_to_neighbours(File.grc_neighbours_json)
 G = GRCGraph.create_graph_from_neighbours(grc_to_neighbours_dictionary=grc_to_neighbours)
 
 nx.draw(G, with_labels=True)
