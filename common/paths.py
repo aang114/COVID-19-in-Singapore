@@ -15,6 +15,8 @@ class File:
 
     input_matrix = '../csv files/INPUT_MATRIX.csv'
 
+    aggregated_cases_csv = '../csv files/AGGREGATED.csv'
+
     grc_neighbours_json = '../grc files/grc neighbours (manually checked).json'
 
 
