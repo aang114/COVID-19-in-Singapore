@@ -30,6 +30,7 @@ new_column = replace_missing_week_numbers_with_nan(week_numbers=week_numbers, we
 
 input_matrix.columns = new_column
 
+
 # Create Number of Weekly Cases CSV
 input_matrix.to_csv(File.number_of_weekly_cases_csv)
 

@@ -25,3 +25,5 @@ class File:
 class Folder:
 
     grc_accuracy_folder = '../model files/grc plots/'
+
+    weeks_folder = '../week files/'
