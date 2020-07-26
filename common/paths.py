@@ -13,7 +13,11 @@ class File:
 
     loss_vs_epoch_png = '../model files/accuracy files/loss_vs_epoch.png'
 
+    number_of_weekly_cases_csv = '../csv files/NUMBER_OF_WEEKLY_CASES.csv'
+
     input_matrix = '../csv files/INPUT_MATRIX.csv'
+
+    input_matrix_of_weekly_cases = '../csv files/INPUT_MATRIX_OF_WEEKLY_CASES.csv'
 
     grc_neighbours_json = '../grc files/grc neighbours (manually checked).json'
 

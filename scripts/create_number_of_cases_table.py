@@ -10,6 +10,8 @@ from modules.log import Log
 
 from datetime import datetime as dt
 
+from common.paths import File
+
 # Create new Table that gives the Cases for every date
 
 path = '../csv files/AGGREGATED_WITH_GRC.csv'
@@ -51,6 +53,4 @@ input_matrix = Aggergate.add_missing_grc_rows(dfc)
 
 input_matrix = input_matrix.cumsum(axis=1)
 
-path = '../csv files/INPUT_MATRIX.csv'
-
-input_matrix.to_csv(path)
+input_matrix.to_csv(File.input_matrix)
