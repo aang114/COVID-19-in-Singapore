@@ -22,7 +22,7 @@ dates = [d.strftime('%d%m%Y') for d in dates]
 
 converter = ConvertHTMLToTxt()
 
-converter.convert(urls, dates, "../text files/")
+converter.convert(urls, dates, "../text files/".replace(' ', '\ '))
 
 
 
