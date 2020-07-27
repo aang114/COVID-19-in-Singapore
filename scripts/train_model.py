@@ -32,7 +32,7 @@ print(net)
 train_files = []
 test_files = []
 
-for file in os.listdir('../graph files/'):
+for file in sorted(os.listdir('../graph files/')):
     date = dt.datetime.strptime(file[:-4], '%Y-%m-%d')
     if date < dt.datetime.strptime('2020-06-26', '%Y-%m-%d'):
         train_files.append(file)
