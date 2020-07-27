@@ -3,9 +3,9 @@ import numpy as np
 
 from modules.latlong_to_grc import *
 
-path = '../csv files/AGGREGATED_WITH_LATLONG.csv'
+from common.paths import File
 
-df = pd.read_csv(path, parse_dates=['Date of \nConfirmation'])
+df = pd.read_csv(File.aggregated_with_latlong_csv, parse_dates=['Date of \nConfirmation'])
 
 grc_df = pd.DataFrame(columns=['GRC'])
 
@@ -35,6 +35,4 @@ for (lat, long) in zip(df['Lattitude'], df['Longitude']):
 
 new_df = pd.concat([df, grc_df], axis=1)
 
-path = '../csv files/AGGREGATED_WITH_GRC.csv'
-
-new_df.to_csv(path)
+new_df.to_csv(File.aggregated_with_grc_csv)

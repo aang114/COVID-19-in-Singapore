@@ -26,7 +26,7 @@ missing_dates = Date.find_missing_dates(dates_array=dfc.columns)
 
 missing_dates_string = [d.strftime('%d%m%Y') for d in missing_dates]
 
-with open('../log files/failed_dates.json') as f:
+with open(File.remaining_failed_dates_json) as f:
     date_to_error = json.load(f)
 
 unscraped_dates_string = [d for d in missing_dates_string if date_to_error.get(d) == Log.ParseTextFileError.DATE_DOES_NOT_MATCH

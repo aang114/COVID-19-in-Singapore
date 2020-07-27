@@ -77,9 +77,11 @@ class ParseTextFile:
 
         annex_c_one_space_only = '\[' + '(\d+)' + '\]' + '[\s\S]' + 'Annex C'
 
-        annex_no_alphabet = '\[' + '(\d+)' + '\]' + 'Annex for'
+        #annex_no_alphabet = '\[' + '(\d+)' + '\]' + 'Annex for'
+        annex_no_alphabet = '\[' + '(\d+)' + '\]' + 'Annex' + '(?![\s\S][ABC])'
 
-        annex_no_alphabet_one_space_only = '\[' + '(\d+)' + '\]' + '[\s\S]' + 'Annex for'
+        #annex_no_alphabet_one_space_only = '\[' + '(\d+)' + '\]' + '[\s\S]' + 'Annex for'
+        annex_no_alphabet_one_space_only = '\[' + '(\d+)' + '\]' + '[\s\S]' + 'Annex' + '(?![\s\S][ABC])'
 
         additional_X_cases_of_COVID = '\[(\d+)\]additional \d+ cases of COVID-19 infection'
 

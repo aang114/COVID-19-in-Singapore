@@ -3,15 +3,18 @@ import numpy as np
 
 from modules.location_to_latlong import *
 
-from modules.latlong_to_grc import *
+from common.paths import File
 
-path = '../csv files/AGGREGATED.csv'
+from modules.log import Log
 
-df = pd.read_csv(path, parse_dates=['Date of \nConfirmation'])
+df = pd.read_csv(File.aggregated_csv, parse_dates=['Date of \nConfirmation'])
 
 latlong_df = pd.DataFrame(data=None, columns=['Lattitude', 'Longitude'])
 
-latlong_searcher = LocationToLatlong(key='AIzaSyCNPJfnJra5qHyjv9Loc87UD_n6qL09YmE')
+latlong_searcher = LocationToLatlong(key='AIzaSyAVEfTkmA0VG62RS-LEjhebpM6G7R1xUtU')
+
+# create empty json file
+open(File.failed_latlong_locations_json, 'w')
 
 for cluster in df['Cluster']:
 
@@ -33,11 +36,9 @@ for cluster in df['Cluster']:
             row_to_add = pd.DataFrame([[np.nan, np.nan]], columns=latlong_df.columns)
             latlong_df = latlong_df.append(row_to_add, ignore_index=True)
 
-
+            Log.append_to_json_file(directory=File.failed_latlong_locations_json, key=cluster, value=str(e))
 
 
 new_df = pd.concat([df, latlong_df], axis=1)
 
-path = '../csv files/AGGREGATED_WITH_LATLONG.csv'
-
-new_df.to_csv(path)
+new_df.to_csv(File.aggregated_with_latlong_csv)

@@ -9,12 +9,12 @@ import dgl
 
 from modules.gnn_model import *
 
-from common.paths import File
+from common.paths import File, Folder
 
-FIIRST_TRAINING_WEEK = ''
+from common.ml_model import GrcWeeklyCasesDataset
 
 def load_data(file):
-    with open(f'../graph files/{file}', 'rb') as f:
+    with open(f'{Folder.weeks_folder}{file}', 'rb') as f:
         C, features, targets = pickle.load(f)
         features = th.FloatTensor(features)
         targets = th.FloatTensor(targets)
@@ -34,9 +34,11 @@ print(net)
 train_files = []
 test_files = []
 
-for file in os.listdir('../graph files/'):
-    date = dt.datetime.strptime(file[:-4], '%Y-%m-%d')
-    if date < dt.datetime.strptime('2020-06-26', '%Y-%m-%d'):
+# idk why os.listdr(Folder.week_folder) isn't sorted!
+for file in sorted(os.listdir(Folder.weeks_folder)):
+    #date = dt.datetime.strptime(file[:-4], '%Y-%m-%d')
+    week_number = int(file[:-4])
+    if week_number < GrcWeeklyCasesDataset.first_training_week:
         train_files.append(file)
     else:
         test_files.append(file)
@@ -94,18 +96,18 @@ plt.plot(test_loss)
 plt.title('Loss vs. Epochs')
 plt.ylim((0,0.6))
 
-plt.savefig(File.loss_vs_epoch_png)
+plt.savefig(File.loss_vs_epoch_for_weekly_cases_png)
 #plt.show()
 
 # Save Model and Train and Test Files
 
-with open(File.trained_model, 'wb') as f:
+with open(File.trained_model_for_weekly_cases, 'wb') as f:
     pickle.dump(obj=net, file=f)
 
-with open(File.train_files, 'wb') as f:
+with open(File.train_files_for_weekly_cases, 'wb') as f:
     pickle.dump(obj=train_files, file=f)
 
-with open(File.test_files, 'wb') as f:
+with open(File.test_files_for_weekly_cases, 'wb') as f:
     pickle.dump(obj=test_files, file=f)
 
 
