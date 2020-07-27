@@ -21,9 +21,12 @@ class File:
 
     grc_neighbours_json = '../grc files/grc neighbours (manually checked).json'
 
+    url_of_failed_dates_json = '../failed_dates_files/urls of missing dates (manually retrieved).json'
 
 class Folder:
 
     grc_accuracy_folder = '../model files/grc plots/'
 
     weeks_folder = '../week files/'
+
+    text_files_folder_for_failed_dates = '../failed_dates_files/text files'
