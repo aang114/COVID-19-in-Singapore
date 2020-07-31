@@ -8,7 +8,7 @@ To predict future COVID-19 cases in Singapore, I had decided to replicate an alr
 
 The graph was created where the nodes represent GRCs (Group Representation Constituencies) regions in Singapore. An edge exists between 2 nodes if the 2 GRCs are neighbours.
 
-#![Graph of GRCs](readme%20pictures/graph.png =250x)
+#![graph](readme%20pictures/graph.png =250x)
 
 
 ### GNN Model's Input and Output
