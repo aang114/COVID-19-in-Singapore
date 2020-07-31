@@ -47,7 +47,7 @@ The project has many different sequential stages. Therefore, running each Python
 
 ![image](readme%20pictures/5.png)
 
-6. create_number_of_cases_table.py: Reformats the Table by having the column labels equal the “Dates of Confirmation” (in ascending order) and the row labels equal the different “GRC” regions. Therefore, for example: the number of cases at GRC X on Date Y can be found by looking at (GRC X, Date Y) in the table. The reformatted Table should look like this:
+6. create_number_of_cases_table.py: Reformats the Table by having the column labels equal the “Dates of Confirmation” (in ascending order) and the row labels equal the different “GRC” regions. Therefore, for example: the number of cases at GRC X on Date Y can be found by looking at (GRC X, Date Y) in the table
 
 ![image](readme%20pictures/6.png)
 
@@ -65,7 +65,7 @@ The project has many different sequential stages. Therefore, running each Python
 
 ### Evaluation
 
-![image](readme%20pictures/train and test plot.png)
+![image](readme%20pictures/train%20and%20test%20plot.png)
 
 By plotting the ground truth versus predictions on the testing dataset, I had received an r^2 score of ~ 0.898 (3 significant figures). And by plotting the ground truth versus prediction on the training dataset, I had received an r^2 score of ~0.998 (3 significant figures). Furthermore, from looking at plots of most GRCs, the predictions closely match the general trend direction of the actual number of cases. However, just like with the project done by the University of Illinois students, the predictions are volatile.
 
