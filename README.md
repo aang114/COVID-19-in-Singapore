@@ -8,7 +8,8 @@ To predict future COVID-19 cases in Singapore, I had decided to replicate an alr
 
 The graph was created where the nodes represent GRCs (Group Representation Constituencies) regions in Singapore. An edge exists between 2 nodes if the 2 GRCs are neighbours.
 
-![Graph of GRCs](readme%20pictures/graph.png)
+#![Graph of GRCs](readme%20pictures/graph.png =250x)
+
 
 ### GNN Model's Input and Output
 
@@ -67,5 +68,5 @@ The project has many different sequential stages. Therefore, running each Python
 
 ![image](readme%20pictures/train%20and%20test%20plot.png)
 
-By plotting the ground truth versus predictions on the testing dataset, I had received an r^2 score of ~ 0.898 (3 significant figures). And by plotting the ground truth versus prediction on the training dataset, I had received an r^2 score of ~0.998 (3 significant figures). Furthermore, from looking at plots of most GRCs, the predictions closely match the general trend direction of the actual number of cases. However, just like with the project done by the University of Illinois students, the predictions are volatile.
+By plotting the ground truth versus predictions on the testing dataset, I had received an r^2 score of ~ 0.898 (3 significant figures). And by plotting the ground truth versus prediction on the training dataset, I had received an r^2 score of ~0.998 (3 significant figures). Furthermore, from looking at plots of most GRCs (the GRC plots are in the directory 'model files/grc plots'), the predictions closely match the general trend direction of the actual number of cases. However, just like with the project done by the University of Illinois students, the predictions are volatile.
 
