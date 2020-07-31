@@ -46,7 +46,7 @@ The project has many different sequential stages. Therefore, running each Python
 
 ![image](readme%20pictures/1.png)
 
-2. call_parser.py: Creates a Table from the downloaded text files. This table contains all relevant information about every published COVID-19 case (found in the Daily COVID-19 Press Release Reports) in Singapore; each row entry in the Table follows the following format: “Case Number”, “Date of Confirmation”, “Age”, “Gender”, “Cluster” and “Links” (all row entries must have a non-null “Case Number”)
+2. call_parser.py: Creates a Table from the downloaded text files. This table contains all relevant information about every published COVID-19 case (found in the Daily COVID-19 Press Release Reports) in Singapore; each row entry in the Table follows the following format: “Case Number”, “Date of Confirmation”, "Nationality", “Age”, “Gender”, “Cluster” and “Links” (all row entries must have a non-null “Case Number”)
 
 ![image](readme%20pictures/2.png)
 
