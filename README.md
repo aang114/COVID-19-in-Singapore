@@ -1,4 +1,4 @@
-# Predicting future COVID-19 cases in different regions of Singapore using a Graph Neural Network (GNN) model on spatial temporal data
+# Predicting future COVID-19 cases in different regions of Singapore using a Graph Neural Network (GNN) model
 
 ### GNN Model Used
 
