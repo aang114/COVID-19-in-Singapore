@@ -23,6 +23,20 @@ The GNN model used has 3 layers:
 2. A standard GCN layer
 3. A final standard GCN layer which outputs the total number of cases for the 11th day for each GRC
 
+### Technologies Used in the Project
+
+1. Programming Language: Python
+2. Version Control System: Git
+3. Web Scraping Library: BeautifulSoup
+4. (String) Pattern Matching Library: RegEx
+5. PDF Table Parser Library: Camelot
+6. Data Manipulation and Analysis Libraries: Pandas and NumPy
+7. Geocoding Library: Google Maps API
+8. Library for analysis of planar geometric objects: Shapely
+9. Graph Creation Library: NetworkX
+10. Machine Learning Libraries (to create/train GNN model): PyTorch and DGLGraph
+11. Plotting Library: Matplotlib
+
 
 ### Project Pipeline
 
