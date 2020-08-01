@@ -80,9 +80,9 @@ The project has many different sequential stages. Therefore, running each Python
 
 ### Evaluation
 
+(Note: The evaluation results mentioned below have been taken from the branch 'train_gnn_with_weekly_cases')
+
 ![image](readme%20pictures/train%20and%20test%20plot.png)
 
-By plotting the ground truth versus predictions on the testing dataset, I had received an r^2 score of ~ 0.898 (3 significant figures). And by plotting the ground truth versus prediction on the training dataset, I had received an r^2 score of ~0.998 (3 significant figures). Furthermore, from looking at plots of most GRCs (the GRC plots are in the directory 'model files/grc plots'), the predictions closely match the general trend direction of the actual number of cases. However, just like with the project done by the University of Illinois students, the predictions are volatile.
-
-(Note: The latest version of this project is inside the branch named 'train_gnn_with_weekly_cases'. The evaluation results mentioned above have been taken from 'train_gnn_with_weekly_cases')
+By plotting the ground truth versus predictions on the testing dataset, I had received an r^2 score of ~ 0.898 (3 significant figures). And by plotting the ground truth versus prediction on the training dataset, I had received an r^2 score of ~0.998 (3 significant figures) (you can find these results in the directory 'model files/accuracy files'). Furthermore, from looking at plots of most GRCs (the GRC plots are in the directory 'model files/grc plots'), the predictions closely match the general trend direction of the actual number of cases. However, just like with the project done by the University of Illinois students, the predictions are volatile.
 
