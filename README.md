@@ -80,7 +80,7 @@ The project has many different sequential stages. Therefore, running each Python
 
 ### Evaluation
 
-(Note: The evaluation results mentioned below have been taken from the branch 'train_gnn_with_weekly_cases')
+Note: The evaluation results mentioned below have been taken from the branch 'train_gnn_with_weekly_cases'
 
 ![image](readme%20pictures/train%20and%20test%20plot.png)
 
